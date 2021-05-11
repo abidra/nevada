@@ -12,4 +12,5 @@
 3. copy file inside `/resources/views/search.blade.php`
 4. copy file inside `/resources/js/components/SearchComponent.vue`
 5. copy file inside `/resources/js/app.js`
+5. copy file inside `/webpack.mix.js`
 6. run `npm install && npm run dev`
