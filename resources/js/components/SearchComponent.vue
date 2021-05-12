@@ -1,5 +1,5 @@
 <template>
-    <ais-index app-id="VKSP2DHMZK" api-key="89c3c15cb85a34d2b87edfc354e0b994" index-name="dev_ecohome">
+    <ais-index app-id="Q4E7V0YE1Q" api-key="fef8c357b43f5a2c128618b23dedf699" index-name="prod_ecohome">
         <ais-search-box></ais-search-box>
         <ais-results inline-template>
             <table class="table">
