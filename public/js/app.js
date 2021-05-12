@@ -10289,6 +10289,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -61950,13 +61960,42 @@ var render = function() {
     "ais-index",
     {
       attrs: {
-        "app-id": "VKSP2DHMZK",
-        "api-key": "89c3c15cb85a34d2b87edfc354e0b994",
-        "index-name": "dev_ecohome"
+        "app-id": "Q4E7V0YE1Q",
+        "api-key": "fef8c357b43f5a2c128618b23dedf699",
+        "index-name": "prod_ecohome"
       }
     },
     [
-      _c("ais-search-box"),
+      _c("ais-search-box", {
+        scopedSlots: _vm._u([
+          {
+            key: "default",
+            fn: function(ref) {
+              var currentRefinement = ref.currentRefinement
+              var isSearchStalled = ref.isSearchStalled
+              var refine = ref.refine
+              return _c("div", { staticClass: "input-group" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "search", placeholder: "Search" },
+                  domProps: { value: currentRefinement },
+                  on: {
+                    input: function($event) {
+                      return refine($event.currentTarget.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", { attrs: { hidden: !isSearchStalled } }, [
+                  _vm._v("Loading...")
+                ])
+              ])
+            }
+          }
+        ])
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mb-3" }),
       _vm._v(" "),
       _c("ais-results", {
         inlineTemplate: {
@@ -61964,8 +62003,8 @@ var render = function() {
             var _vm = this
             var _h = _vm.$createElement
             var _c = _vm._self._c || _h
-            return _c("table", { staticClass: "table" }, [
-              _c("thead", [
+            return _c("table", { staticClass: "table table-hover" }, [
+              _c("thead", { staticClass: "table-warning" }, [
                 _c("tr", [
                   _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
                   _vm._v(" "),
@@ -62013,7 +62052,12 @@ var render = function() {
                             staticClass: "btn btn-success",
                             attrs: { type: "button" }
                           },
-                          [_vm._v("Edit Report")]
+                          [
+                            _c("i", { staticClass: "fa fa-pencil-square-o" }),
+                            _vm._v(
+                              " Edit\n                                Report"
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -62022,7 +62066,12 @@ var render = function() {
                             staticClass: "btn btn-danger",
                             attrs: { type: "button" }
                           },
-                          [_vm._v("Delete Report")]
+                          [
+                            _c("i", { staticClass: "fa fa-trash-o" }),
+                            _vm._v(
+                              " Delete\n                                Report"
+                            )
+                          ]
                         )
                       ])
                     ])

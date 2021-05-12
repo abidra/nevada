@@ -1,9 +1,17 @@
 <template>
     <ais-index app-id="Q4E7V0YE1Q" api-key="fef8c357b43f5a2c128618b23dedf699" index-name="prod_ecohome">
-        <ais-search-box></ais-search-box>
+        <ais-search-box>
+            <div class="input-group" slot-scope="{ currentRefinement, isSearchStalled, refine }">
+                <input type="search" :value="currentRefinement" @input="refine($event.currentTarget.value)"
+                    class="form-control" placeholder="Search">
+                <span :hidden="!isSearchStalled">Loading...</span>
+            </div>
+        </ais-search-box>
+
+        <div class="mb-3"></div>
         <ais-results inline-template>
-            <table class="table">
-                <thead>
+            <table class="table table-hover">
+                <thead class="table-warning">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Date</th>
@@ -24,10 +32,12 @@
                         <td>{{ result.solarCompany }}</td>
                         <td>
                             <div class="d-grid gap-2">
-                            <button type="button" class="btn btn-success">Edit Report</button>
-                            <button type="button" class="btn btn-danger">Delete Report</button>
+                                <button type="button" class="btn btn-success"><i class="fa fa-pencil-square-o" /> Edit
+                                    Report</button>
+                                <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" /> Delete
+                                    Report</button>
                             </div>
-                            </td>
+                        </td>
                     </tr>
                 </tbody>
             </table>
