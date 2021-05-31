@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::view('/search', 'search');
+Route::get('/upload', [App\Http\Controllers\UploadController::class, 'upload'])->name('upload');
+Route::post('/upload/image',  [App\Http\Controllers\UploadController::class, 'store'])->name('store.image');
 
 Auth::routes();
 

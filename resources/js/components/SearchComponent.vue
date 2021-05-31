@@ -54,7 +54,6 @@
 </template>
 
 <script>
-    import algoliasearch from 'algoliasearch/lite';
     export default {
         mounted() {
             console.log('Component mounted.')
