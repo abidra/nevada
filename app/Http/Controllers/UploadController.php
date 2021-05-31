@@ -19,7 +19,7 @@ class UploadController extends Controller
   
         $this->storeImage($request);
     }
-    
+
     public function storeImage($request) {
         // Get file from request
         $file = $request->file('image');
@@ -48,7 +48,7 @@ class UploadController extends Controller
       
       public function resizeImage($file, $fileNameToStore) {
         // Resize image
-        $resize = Image::make($file)->resize(600, null, function ($constraint) {
+        $resize = Image::make($file)->resize(1024, null, function ($constraint) {
           $constraint->aspectRatio();
         })->encode('jpg');
   
